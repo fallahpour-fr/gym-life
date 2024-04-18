@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Route, Routes } from "react-router-dom";
+import { Fragment} from "react";
 import './App.css';
+import { HomeModule } from "./pages/HomeContent/views";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Routes>
+        <Route path='/' element={<HomeModule />} />
+        {/* <Route path='/about-us' element={<AboutUsModule />} />
+        <Route path='/class-details' element={<ClassDetailsModule />} />
+        <Route path='/services' element={<ServicesModule />} />
+        <Route path='/team' element={<TeamModule/>} />
+        <Route path='/contact' element={<ContactUsModule />} />
+        <Route
+          path="*"
+          element={<PageNotFoundModule />}
+        /> */}
+      </Routes>
+    </Fragment>
   );
 }
 
